@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+<title>Simple Form Creation Example</title>
+</head>
+<body>
+
+<div >
+
+<h1>Simple Object Orientation Examples</h1>
+
+<select id="dogaction">
+<option id="bark">Bark</option>
+<option id="eat">Eat</option>
+<option id="walk">Walk</option>
+</select>
+
+<button id="button1" onclick="createDog()">Get Dog to Act</button>
+
+
+<script>
+
+function createDog() {
+	var myDog = new Dog("small","Doberman","Rex");
+	var e = document.getElementById("dogaction");
+	var selectedAction = e.options[e.selectedIndex].id;
+	alert(selectedAction);
+	if (selectedAction == "bark") {
+		myDog.bark();
+	}
+	if (selectedAction == "eat") {
+		myDog.eat();
+	}
+	if (selectedAction == "walk") {
+		myDog.walk();
+	}
+
+}
+
+function Dog (size, breed, name) {
+	// some code goes here
+	this.size = size;
+	this.breed = breed;
+	this.name = name;
+	this.bark = function() {
+	       alert("woof woof");
+    	};
+	this.eat= function() {
+	       alert("yum yum");
+    	};
+	this.walk= function() {
+	       alert("walk walk");
+    	};
+}
+
+
+
+</script>
+
+</body>
